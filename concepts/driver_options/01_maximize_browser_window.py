@@ -17,7 +17,7 @@ def test_open_maximized_browser():
         # Assert that the title of the webpage is equal to "Google"
         assert driver.title == "Google"
 
-        # Wait for some time (you need to define the waitForSomeTime() function)
+        # Wait for some time
         wait_some_time()
 
     finally:

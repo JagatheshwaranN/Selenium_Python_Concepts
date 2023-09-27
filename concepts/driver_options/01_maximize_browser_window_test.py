@@ -1,10 +1,8 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import pytest
 
 
-@pytest.fixture(autouse=True)
 def test_open_maximized_browser():
     chrome_options = Options()
     chrome_options.add_argument("--start-maximized")

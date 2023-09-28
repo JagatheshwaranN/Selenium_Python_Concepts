@@ -28,7 +28,7 @@ def test_open_maximized_browser():
         driver.quit()
 
 
-# Define your wait_some_dime() function here
+# Define wait_some_time() function here
 def wait_some_time():
     # Example: Wait for 5 seconds
     time.sleep(5)

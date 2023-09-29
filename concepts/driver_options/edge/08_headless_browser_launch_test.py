@@ -25,5 +25,5 @@ def test_headless_browser_launch():
         assert "Google" in driver.title
 
     finally:
-        # Close the Chrome browser
+        # Close the Edge browser
         driver.quit()

@@ -52,7 +52,7 @@ def test_wait_timeout():
         print("Page load time out : ", te)
 
     finally:
-        # Close the Chrome browser
+        # Close the Edge browser
         driver.quit()
 
 

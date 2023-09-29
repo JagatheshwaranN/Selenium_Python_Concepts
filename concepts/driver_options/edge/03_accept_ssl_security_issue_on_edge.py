@@ -28,7 +28,7 @@ def test_accept_ssl_security_issue_on_edge():
         wait_some_time()
 
     finally:
-        # Close the Chrome browser
+        # Close the Edge browser
         driver.quit()
 
 

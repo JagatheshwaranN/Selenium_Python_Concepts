@@ -23,8 +23,10 @@ def test_wait_until_type_1():
         # Send keys to the input element
         input_element.send_keys("Admin")
 
+        # Get the attribute "value" from the input element
         result = input_element.get_attribute("value")
 
+        # Assert that the result matches the expected value
         assert result == "Admin"
 
     finally:

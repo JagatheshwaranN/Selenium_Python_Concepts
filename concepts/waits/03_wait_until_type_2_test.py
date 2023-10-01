@@ -25,6 +25,7 @@ def test_wait_until_type_2():
         # Get the text of the heading element on the dashboard page
         result = driver.find_element(By.XPATH, "//div[@class='content-header']//h1").text
 
+        # Assert that the result matches the expected value
         assert result == "Dashboard"
 
     finally:

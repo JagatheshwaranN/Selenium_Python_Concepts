@@ -4,12 +4,21 @@ from selenium.webdriver.common.by import By
 
 
 class TestTraditionalLocators(unittest.TestCase):
-    def setUp(self):
+    # Initialize the driver variable
+    driver = None
+
+    @classmethod
+    def setUpClass(cls):
         # Initialize the Chrome WebDriver
-        self.driver = webdriver.Chrome()
+        cls.driver = webdriver.Chrome()
 
         # Maximize the browser window
-        self.driver.maximize_window()
+        cls.driver.maximize_window()
+
+    @classmethod
+    def tearDownClass(cls):
+        # Close the driver
+        cls.driver.quit()
 
     def test_traditional_locators(self):
         # Navigate to the inputs page
@@ -41,10 +50,6 @@ class TestTraditionalLocators(unittest.TestCase):
 
         # 8. Tag
         self.assertTrue(self.driver.find_element(By.TAG_NAME, "a").is_displayed())
-
-    def tearDown(self):
-        # Close the driver
-        self.driver.quit()
 
 
 if __name__ == "__main__":

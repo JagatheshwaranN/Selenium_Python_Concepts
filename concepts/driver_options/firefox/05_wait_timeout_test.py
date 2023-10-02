@@ -56,6 +56,8 @@ def test_wait_timeout():
         # Close the Firefox browser
         driver.quit()
 
+        # Close the FirefoxService to release resources and close the log file
+        service.stop()
 
 # Define wait_some_time() function here
 def wait_some_time():

@@ -30,3 +30,6 @@ def test_headless_browser_launch():
     finally:
         # Close the Firefox browser
         driver.quit()
+
+        # Close the FirefoxService to release resources and close the log file
+        service.stop()

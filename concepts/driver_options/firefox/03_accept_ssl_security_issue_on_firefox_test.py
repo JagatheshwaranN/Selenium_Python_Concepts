@@ -41,6 +41,9 @@ def test_accept_ssl_security_issue_on_firefox():
         # Close the Firefox browser
         driver.quit()
 
+        # Close the FirefoxService to release resources and close the log file
+        service.stop()
+
 
 # Define wait_some_time() function here
 def wait_some_time():

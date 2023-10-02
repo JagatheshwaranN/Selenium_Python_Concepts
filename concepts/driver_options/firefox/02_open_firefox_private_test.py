@@ -29,3 +29,6 @@ def test_open_firefox_private():
     finally:
         # Close the Firefox browser
         driver.quit()
+
+        # Close the FirefoxService to release resources and close the log file
+        service.stop()

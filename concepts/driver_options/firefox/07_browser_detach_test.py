@@ -32,3 +32,6 @@ def test_browser_details():
     finally:
         # Close the browser
         driver.quit()
+
+        # Close the FirefoxService to release resources and close the log file
+        service.stop()

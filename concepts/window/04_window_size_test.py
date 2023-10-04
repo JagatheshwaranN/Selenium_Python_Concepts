@@ -19,7 +19,7 @@ class TestWindowSize(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_set_get_window_size(self):
+    def test_window_size(self):
         # Navigate to the website
         self.driver.get("https://the-internet.herokuapp.com/windows")
 

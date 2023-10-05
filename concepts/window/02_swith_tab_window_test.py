@@ -50,7 +50,7 @@ class TestSwitchTabOrWindow(unittest.TestCase):
                     # Switch the WebDriver's focus to the new window
                     self.driver.switch_to.window(handle)
 
-                    # Print the handle of the new window (for debugging purposes)
+                    # Print the handle of the new window
                     print(handle)
 
                     # Break out of the loop since we've switched to the new window

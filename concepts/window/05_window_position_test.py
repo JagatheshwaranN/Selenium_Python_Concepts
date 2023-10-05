@@ -29,7 +29,7 @@ class TestWindowPosition(unittest.TestCase):
         # Print the initial window position
         print("Initial Window Position (X, Y): ", window_initial_position)
 
-        # Assert that the window position X and Y are greater than or equal to 0
+        # Assert that the window position X and Y are less than or equal to 0
         self.assertGreaterEqual(window_initial_position['x'], -8)
         self.assertGreaterEqual(window_initial_position['y'], -8)
 

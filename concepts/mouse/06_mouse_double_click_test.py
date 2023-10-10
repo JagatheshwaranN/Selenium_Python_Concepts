@@ -22,7 +22,7 @@ class TestMouseDoubleClick(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_mouse_right_click(self):
+    def test_mouse_double_click(self):
         # Navigate to the webpage where the mouse interaction test will be performed
         self.driver.get("https://demo.guru99.com/test/simple_context_menu.html")
 

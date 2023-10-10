@@ -1,3 +1,4 @@
+import time
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -42,7 +43,7 @@ class TestMouseBackClick(unittest.TestCase):
         # Assert that the title of the page is "We Arrive Here"
         self.assertEqual(self.driver.title, "We Arrive Here")
 
-        # Wait for a moment
+        # Wait for a moment - For demo purpose
         self.wait_for_some_time(3)
 
         # Perform a mouse button down action on the BACK button
@@ -54,7 +55,7 @@ class TestMouseBackClick(unittest.TestCase):
         # Perform the actions in the action builder
         self.action_builder.perform()
 
-        # Wait for a moment
+        # Wait for a moment - For demo purpose
         self.wait_for_some_time(3)
 
         # Assert that the page title has changed back
@@ -62,7 +63,6 @@ class TestMouseBackClick(unittest.TestCase):
 
     def wait_for_some_time(self, seconds):
         # Helper method to wait for a specified number of seconds
-        import time
         time.sleep(seconds)
 
 

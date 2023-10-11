@@ -23,7 +23,7 @@ class TestMouseMoveByCurrentPosition(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_mouse_move_by_viewport(self):
+    def test_mouse_move_by_current_position(self):
         # Navigate to the Selenium Mouse Interaction page
         self.driver.get("https://www.selenium.dev/selenium/web/mouse_interaction.html")
 

@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.common.action_chains import ActionBuilder
 
 
 class TestActionReset(unittest.TestCase):
@@ -35,6 +36,12 @@ class TestActionReset(unittest.TestCase):
         # Define a sequence of actions: click and hold the element, press and hold the SHIFT key, and send "a" to the
         # element
         self.actions.click_and_hold(clickable_element).key_down(Keys.SHIFT).send_keys("a").perform()
+
+        """
+        Alternate option to reset / clear the actions
+        
+        ActionBuilder(self.driver).clear_actions()
+        """
 
         # Reset the previously defined actions to start fresh with a clean actions chain
         self.actions.reset_actions()

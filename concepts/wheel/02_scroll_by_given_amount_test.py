@@ -3,9 +3,11 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
-class TestScrollToElement(unittest.TestCase):
+class TestScrollByGivenAmount(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -22,21 +24,34 @@ class TestScrollToElement(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_scroll_to_element(self):
-        # Navigating to the Selenium website
+    def test_scroll_by_given_amount(self):
+        # Navigate to the Selenium website
         self.driver.get("https://www.selenium.dev/")
 
-        # Creating an ActionChains instance for performing actions
+        # Initializing the ActionChains object
         self.actions = ActionChains(self.driver)
 
-        # Locating the element with the CSS selector '.selenium.text-center'
-        selenium_sponsors_element = self.driver.find_element(By.CSS_SELECTOR, ".selenium.text-center")
+        # Locating the 'Learn More' button
+        selenium_learn_more_button = self.driver.find_element(By.XPATH,
+                                                              "//a[contains(@class,'selenium-button "
+                                                              "selenium-white-cyan')]")
 
-        # Scrolling to the element using ActionChains and performing the action
-        self.actions.scroll_to_element(selenium_sponsors_element).perform()
+        """
+        Another way to get the y_axis
+        y_axis = int(selenium_learn_more_button.rect['y'])
+        """
+        # Obtaining the y-axis coordinate of the button element
+        y_axis = int(selenium_learn_more_button.rect.get('y'))
 
-        # Verifying if the element is within the viewport
-        assert self.in_viewport(selenium_sponsors_element)
+        # Scrolling by the specified y-axis amount
+        self.actions.scroll_by_amount(0, y_axis).perform()
+
+        # Waiting until the button is present in the viewport
+        WebDriverWait(self.driver, 2).until(
+            EC.presence_of_element_located((By.XPATH, "//a[contains(@class,'selenium-button selenium-white-cyan')]")))
+
+        # Asserting whether the button is in the viewport
+        assert self.in_viewport(selenium_learn_more_button)
 
         # Wait for a specified number of seconds
         time.sleep(1)

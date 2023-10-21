@@ -48,8 +48,8 @@ class TestPromptAlert(unittest.TestCase):
         # Send the keys "Python" to the alert input box
         alert.send_keys("Python")
 
-        # Accept the alert
-        alert.accept()
+        # Dismiss the alert
+        alert.dismiss()
 
         # Assert that the alert_content is equal to "I am a JS prompt"
         assert alert_content == "I am a JS prompt"

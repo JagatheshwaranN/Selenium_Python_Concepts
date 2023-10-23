@@ -39,13 +39,13 @@ class TestCookieSameSite(unittest.TestCase):
 
         # The for loop iterates through the cookies list
         for cookie in cookies:
-            # Print the expiry details of the cookie
+            # Print the same-site details of the cookie
             print(f"SameSite: {cookie['sameSite']}")
 
-            # Add the name of the current cookie to the list
+            # Add the same-site of the current cookie to the list
             cookie_list.append(cookie['sameSite'])
 
-        # Asserting the cookie names in the list
+        # Asserting the cookie same-site values in the list
         assert cookie_list[0] == "Lax"
         assert cookie_list[1] == "Lax"
 

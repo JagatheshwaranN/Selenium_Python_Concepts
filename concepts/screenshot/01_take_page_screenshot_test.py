@@ -31,8 +31,8 @@ class TestTakePageScreenshot(unittest.TestCase):
         # Sleep for 2 seconds to ensure the screenshot is taken
         time.sleep(2)
 
-        # Check if the screenshot file "screenshot.png" exists in the current directory
-        assert os.path.exists("screenshot.png")
+        # Check if the screenshot file "page_screen.png" exists in the current directory
+        assert os.path.exists("page_screen.png")
 
 
 if __name__ == "__main__":

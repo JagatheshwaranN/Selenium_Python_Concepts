@@ -30,12 +30,16 @@ class TestTakeScreenshotAsPng(unittest.TestCase):
 
         # Write the screenshot data to a file named "png.png" in binary mode
         with open("png.png", "wb") as file:
+            # write the png_file content to the file
             file.write(png_file)
+
+            # Close the file
+            file.close()
 
         # Sleep for 2 seconds to ensure the screenshot is taken
         time.sleep(2)
 
-        # Check if the screenshot file "file.png" exists in the current directory
+        # Check if the screenshot file "png.png" exists in the current directory
         assert os.path.exists("png.png")
 
 

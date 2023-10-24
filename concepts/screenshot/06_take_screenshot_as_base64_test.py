@@ -34,6 +34,9 @@ class TestTakeScreenshotAsBase64(unittest.TestCase):
             # Decode the base64 encoded content and write it to the file
             file.write(base64.b64decode(image_base64))
 
+            # Close the file
+            file.close()
+
         # Sleep for 2 seconds to ensure the screenshot is taken
         time.sleep(2)
 

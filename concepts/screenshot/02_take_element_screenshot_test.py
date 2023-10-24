@@ -35,7 +35,7 @@ class TestElementScreenShot(unittest.TestCase):
         # Sleep for 2 seconds to ensure the screenshot is taken
         time.sleep(2)
 
-        # Check if the screenshot file "screenshot.png" exists in the current directory
+        # Check if the screenshot file "element_screen.png" exists in the current directory
         assert os.path.exists("element_screen.png")
 
 

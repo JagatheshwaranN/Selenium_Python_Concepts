@@ -37,6 +37,9 @@ class TestPrintPage(unittest.TestCase):
             # Decode the base64 encoded content and write it to the file
             file.write(base64.b64decode(pdf_base64))
 
+            # Close the file
+            file.close()
+
         # Assert that the 'print.pdf' file exists
         assert os.path.exists("print.pdf")
 

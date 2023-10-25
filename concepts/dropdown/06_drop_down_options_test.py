@@ -35,6 +35,9 @@ class TestDropDownOptions(unittest.TestCase):
         for option in drop_down_options:
             print(option.text)
 
+        # Asserting the length of the list drop_down_options is equal to 29
+        assert len(drop_down_options) == 29
+
 
 if __name__ == "__main__":
     unittest.main()

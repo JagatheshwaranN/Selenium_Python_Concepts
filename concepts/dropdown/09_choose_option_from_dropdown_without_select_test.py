@@ -50,6 +50,12 @@ class TestDropdownWithoutSelectClass(unittest.TestCase):
         if not flag:
             print("The option is not in the dropdown list")
 
+        # Find the element with the class name "select-selected" and assign it to selected_option
+        selected_option = self.driver.find_element(By.CLASS_NAME, "select-selected")
+
+        # Assert that the text of the selected_option is "Google Chrome"
+        assert selected_option.text == "Google Chrome"
+
 
 if __name__ == "__main__":
     unittest.main()

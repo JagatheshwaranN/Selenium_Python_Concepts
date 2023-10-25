@@ -38,6 +38,9 @@ class TestSelectDisabledOption(unittest.TestCase):
         # Wait for some time
         time.sleep(3)
 
+        # Asserting that the text of the first selected option in the select_element is "Enabled"
+        assert select_element.first_selected_option.text == "Enabled"
+
 
 if __name__ == "__main__":
     unittest.main()

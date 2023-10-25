@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-class TestSelectDropDownSingleOptionByIndex(unittest.TestCase):
+class TestDropDownOptions(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -21,18 +21,19 @@ class TestSelectDropDownSingleOptionByIndex(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_select_drop_down_single_option_by_index(self):
+    def test_drop_down_options(self):
         # Navigate to the website
         self.driver.get("https://letcode.in/dropdowns")
 
         # Find the dropdown element by CSS selector
-        drop_down = self.driver.find_element(By.CSS_SELECTOR, "#fruits")
+        dropdown_element = self.driver.find_element(By.CSS_SELECTOR, "#superheros")
 
-        # Select the option 'Mango' by its index using the Select class
-        Select(drop_down).select_by_index(2)
+        # Get all dropdown options
+        drop_down_options = Select(dropdown_element).options
 
-        # Assert whether the dropdown text contains 'Mango'
-        assert "Mango" in drop_down.text
+        # Print all the dropdown options
+        for option in drop_down_options:
+            print(option.text)
 
 
 if __name__ == "__main__":

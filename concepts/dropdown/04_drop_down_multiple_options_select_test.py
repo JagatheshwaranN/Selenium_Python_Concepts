@@ -25,10 +25,10 @@ class TestSelectDropDownMultipleOptions(unittest.TestCase):
         # Navigate to the website
         self.driver.get("https://letcode.in/dropdowns")
 
-        # Find the dropdown element by CSS selector
+        # Find the dropdown element by CSS Selector with ID 'superheros'
         dropdown_element = self.driver.find_element(By.CSS_SELECTOR, "#superheros")
 
-        # Find the dropdown element by CSS selector
+        # Create a Select object for the dropdown element
         select_object = Select(dropdown_element)
 
         # Check if the dropdown allows multiple selection

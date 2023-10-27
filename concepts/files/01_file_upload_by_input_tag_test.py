@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-class TestFileUpload(unittest.TestCase):
+class TestFileUploadByInputTag(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -20,7 +20,7 @@ class TestFileUpload(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_file_upload(self):
+    def test_file_upload_by_input_tag(self):
         # Navigate to the Guru99 test page
         self.driver.get("https://demo.guru99.com/test/upload/")
 

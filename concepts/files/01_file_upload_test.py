@@ -21,7 +21,7 @@ class TestFileUpload(unittest.TestCase):
         cls.driver.quit()
 
     def test_file_upload(self):
-        # Open the URL in the browser
+        # Navigate to the Guru99 test page
         self.driver.get("https://demo.guru99.com/test/upload/")
 
         # Find the file input element by ID

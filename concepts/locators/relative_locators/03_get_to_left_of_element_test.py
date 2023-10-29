@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import relative_locator
 
 
-class TestGetBelowElement(unittest.TestCase):
+class TestGetToLeftOfElement(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -21,19 +21,19 @@ class TestGetBelowElement(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_get_below_element(self):
+    def test_get_to_left_of_element(self):
         # Open the website in the browser
         self.driver.get("https://automationbookstore.dev/")
 
-        # Locate the element below the specified element using the relative locator
-        relative_locator.locate_with(By.ID, "pid5").below({By.ID: "pid1"})
+        # Locate the element to the left of the specified element using the relative locator
+        relative_locator.locate_with(By.ID, "pid1").to_left_of({By.ID: "pid2"})
 
-        # Find the element using the relative locator and get its attribute "id"
-        book_id = self.driver.find_element(relative_locator.with_tag_name("li").
-                                           below({By.ID: "pid1"})).get_attribute("id")
+        # Finding the element to the left of the specified element using relative_locator
+        book_id = self.driver.find_element(relative_locator.with_tag_name("li")
+                                           .to_left_of({By.ID: "pid2"})).get_attribute("id")
 
-        # Assert whether the retrieved "id" matches the expected value "pid5"
-        self.assertEqual(book_id, "pid5")
+        # Asserting that the retrieved element's ID matches the expected value
+        self.assertEqual(book_id, "pid1")
 
 
 if __name__ == "__main__":

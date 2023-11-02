@@ -17,7 +17,7 @@ def test_headless_browser_launch():
     service = FirefoxService(log_output=geckodriver_log_path)
 
     # Initialize the Firefox WebDriver with the specified options
-    driver = webdriver.Chrome(options=firefox_options, service=service)
+    driver = webdriver.Firefox(options=firefox_options, service=service)
 
     try:
         # Navigate to the Google homepage

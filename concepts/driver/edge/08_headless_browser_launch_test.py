@@ -10,7 +10,7 @@ def test_headless_browser_launch():
     edge_options.add_argument("--headless")
 
     # Initialize the Edge WebDriver with the specified options
-    driver = webdriver.Chrome(options=edge_options)
+    driver = webdriver.Edge(options=edge_options)
 
     try:
         # Maximize the browser window (note that this may not work in headless mode)

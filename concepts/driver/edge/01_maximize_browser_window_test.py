@@ -11,7 +11,7 @@ def test_open_maximized_browser():
     chrome_options.add_argument("--start-maximized")
 
     # Create a new instance of the Edge WebDriver with the specified options.
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Edge(options=chrome_options)
 
     try:
         # Open the Google homepage in the Edge browser

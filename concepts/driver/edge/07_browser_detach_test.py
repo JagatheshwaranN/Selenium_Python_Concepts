@@ -13,7 +13,7 @@ def test_browser_details():
     edge_options.add_experimental_option("detach", True)
 
     # Initialize the Edge WebDriver with the specified options
-    driver = webdriver.Chrome(options=edge_options)
+    driver = webdriver.Edge(options=edge_options)
 
     try:
         # Maximize the browser window

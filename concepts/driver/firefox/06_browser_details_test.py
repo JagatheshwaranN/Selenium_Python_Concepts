@@ -14,7 +14,7 @@ def test_browser_details():
     service = FirefoxService(log_output=geckodriver_log_path)
 
     # Initialize the Firefox WebDriver with the specified options
-    driver = webdriver.Edge(options=firefox_options, service=service)
+    driver = webdriver.Firefox(options=firefox_options, service=service)
 
     try:
         # Navigate to the Google homepage

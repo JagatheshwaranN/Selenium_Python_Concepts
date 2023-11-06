@@ -23,7 +23,7 @@ class WebDriverEventListener(AbstractEventListener):
 
     def before_click(self, element, driver):
         # Print before clicking an element
-        print(f"After performing the BeforeClick with driver {element}")
+        print(f"Before performing the BeforeClick with driver {element}")
 
     def after_click(self, element, driver):
         # Print after clicking an element
@@ -31,7 +31,7 @@ class WebDriverEventListener(AbstractEventListener):
 
     def before_close(self, driver):
         # Print before closing the driver
-        print(f"After performing the BeforeClose with driver {driver}")
+        print(f"Before performing the BeforeClose with driver {driver}")
 
     def after_close(self, driver):
         # Print after closing the driver

@@ -1,7 +1,5 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.common.devtools.v116.network import Headers
-from selenium.webdriver.common.devtools.v116.network import PrivateNetworkRequestPolicy
 
 
 class TestGetPerformanceMetrics(unittest.TestCase):
@@ -44,4 +42,3 @@ class TestGetPerformanceMetrics(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

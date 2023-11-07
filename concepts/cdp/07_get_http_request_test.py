@@ -1,0 +1,33 @@
+import unittest
+from selenium import webdriver
+
+
+class TestGetHttpRequest(unittest.TestCase):
+    # Initialize the driver variable
+    driver = None
+
+    @classmethod
+    def setUpClass(cls):
+        # Initialize the Chrome WebDriver
+        cls.driver = webdriver.Chrome()
+
+        # Maximize the browser window
+        cls.driver.maximize_window()
+
+    @classmethod
+    def tearDownClass(cls):
+        # Close the driver
+        cls.driver.quit()
+
+    def test_get_http_request(self):
+        self.driver.execute_cdp_cmd('Network.enable', {})
+
+        logs = self.driver.execute_cdp_cmd("Network.getAllRequests", {})
+
+        for log in logs:
+            print(log["request"]["url"])
+
+
+if __name__ == "__main__":
+    unittest.main()
+

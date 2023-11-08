@@ -28,24 +28,27 @@ class TestGetConsoleLog(unittest.TestCase):
 
         # Establish a bidi connection to the session
         async with self.driver.bidi_connection() as session:
+
             # Create a log instance using the driver and session
             log = Log(self.driver, session)
 
-            # Add a listener for all console messages
-            async with log.add_listener(Console.ALL) as messages:
-                # Simulate a click action on an element
-                self.driver.find_element(By.ID, 'consoleLog').click()
+        # Add a listener for all console messages
+        async with log.add_listener(Console.ALL) as messages:
 
-            # Assert the content of the message received
-            assert messages["message"] == "Hello, world!"
+            # Simulate a click action on an element
+            self.driver.find_element(By.ID, 'consoleLog').click()
 
-            # Add a listener for console error messages
-            async with log.add_listener(Console.ERROR) as messages:
-                # Simulate a click action on an element
-                self.driver.find_element(By.ID, 'consoleError').click()
+        # Assert the content of the message received
+        assert messages["message"] == "Hello, world!"
 
-            # Assert the content of the message received
-            assert messages["message"] == "I am console error"
+        # Add a listener for console error messages
+        async with log.add_listener(Console.ERROR) as messages:
+
+            # Simulate a click action on an element
+            self.driver.find_element(By.ID, 'consoleError').click()
+
+        # Assert the content of the message received
+        assert messages["message"] == "I am console error"
 
 
 if __name__ == "__main__":

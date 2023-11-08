@@ -27,16 +27,18 @@ class TestGetJavaScriptError(unittest.TestCase):
 
         # Establish a bidi connection to the session
         async with self.driver.bidi_connection() as session:
+
             # Create a log instance using the driver and session
             log = Log(self.driver, session)
 
-            # Using an asynchronous context manager to listen for JavaScript errors
-            async with log.add_js_error_listener() as messages:
-                # Simulate a click action on an element that may trigger a JavaScript error
-                self.driver.find_element(By.ID, 'jsException').click()
+        # Using an asynchronous context manager to listen for JavaScript errors
+        async with log.add_js_error_listener() as messages:
 
-            # Assert that the expected error message is present in the collected exception details
-            assert "Error: Not working" in messages.exception_details.exception.description
+            # Simulate a click action on an element that may trigger a JavaScript error
+            self.driver.find_element(By.ID, 'jsException').click()
+
+        # Assert that the expected error message is present in the collected exception details
+        assert "Error: Not working" in messages.exception_details.exception.description
 
 
 if __name__ == "__main__":

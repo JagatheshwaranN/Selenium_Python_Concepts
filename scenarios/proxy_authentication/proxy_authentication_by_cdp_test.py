@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-class TestProxyAuthentication(unittest.TestCase):
+class TestProxyAuthenticationByCDP(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -21,7 +21,7 @@ class TestProxyAuthentication(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_proxy_authentication_type2(self):
+    def test_proxy_authentication_by_cdp(self):
         # Enable Network domain in Chrome DevTools Protocol (CDP)
         self.driver.execute_cdp_cmd("Network.enable", {})
 

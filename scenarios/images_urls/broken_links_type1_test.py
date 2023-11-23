@@ -22,7 +22,7 @@ class TestBrokenLinksTest(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_broken_links(self):
+    def test_broken_links_type1(self):
         # Navigate to the newtours website
         self.driver.get("http://demo.guru99.com/test/newtours/")
 

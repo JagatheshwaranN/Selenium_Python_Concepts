@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 
 
-class TestAdjustWindowSize(unittest.TestCase):
+class TestFullScreenWindow(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -20,24 +20,15 @@ class TestAdjustWindowSize(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_adjust_window_size(self):
+    def test_fullscreen_window(self):
         # Navigate to the test page
         self.driver.get("https://the-internet.herokuapp.com/windows")
 
-        # Minimize the browser window
-        self.driver.minimize_window()
-
-        # Wait for some time - For demo purpose
-        self.wait_for_some_time()
-
-        # Maximize the browser window
-        self.driver.maximize_window()
-
-        # Wait for some time - For demo purpose
-        self.wait_for_some_time()
-
         # Maximize the browser window (full-screen)
         self.driver.fullscreen_window()
+
+        # Wait for some time - For demo purpose
+        self.wait_for_some_time()
 
     def wait_for_some_time(self):
         # Wait for some time

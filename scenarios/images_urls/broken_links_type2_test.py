@@ -43,7 +43,7 @@ class TestBrokenLinksTest(unittest.TestCase):
 
     def is_valid_link(self, link):
         try:
-            # Send a HEAD request to the URL to check if it's valid
+            # Send a HEAD request to the URL with a specified timeout
             response = requests.head(link, timeout=30)
 
             # If the status code is 200, the link is valid

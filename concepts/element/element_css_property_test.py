@@ -12,7 +12,7 @@ class TestElementCSSValue(unittest.TestCase):
         # Initialize the Chrome WebDriver
         cls.driver = webdriver.Chrome()
 
-        # Maximize the browser window
+        # Maximize the browser windows
         cls.driver.maximize_window()
 
     @classmethod

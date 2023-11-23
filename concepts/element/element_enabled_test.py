@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-class TestElementText(unittest.TestCase):
+class TestElementEnabled(unittest.TestCase):
     # Initialize the driver variable
     driver = None
 
@@ -12,7 +12,7 @@ class TestElementText(unittest.TestCase):
         # Initialize the Chrome WebDriver
         cls.driver = webdriver.Chrome()
 
-        # Maximize the browser window
+        # Maximize the browser windows
         cls.driver.maximize_window()
 
     @classmethod
@@ -20,18 +20,15 @@ class TestElementText(unittest.TestCase):
         # Close the driver
         cls.driver.quit()
 
-    def test_get_element_text(self):
+    def test_element_enabled(self):
         # Navigate to the inputs page
         self.driver.get("https://www.selenium.dev/selenium/web/inputs.html")
 
-        # Find the element using a Tag Name
-        element = self.driver.find_element(By.TAG_NAME, "h1")
+        # Find the element using a CSS selector and verify if it's enabled
+        element = self.driver.find_element(By.CSS_SELECTOR, "input[name='no_type']")
 
-        # Get the element text
-        element_text = element.text
-
-        # Assert that the retrieved text match the expected values
-        self.assertEqual(element_text, "Testing Inputs")
+        # Assert that the element is enabled on the page
+        self.assertTrue(element.is_enabled())
 
 
 if __name__ == "__main__":

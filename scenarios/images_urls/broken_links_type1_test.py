@@ -62,7 +62,7 @@ class TestBrokenLinksTest(unittest.TestCase):
                 print(f"Active Link Http Request Body ===> {connection.msg}")
 
         except HTTPError as e:
-            # Handle HTTPError by printing the status code and message
+            # Handle HTTPError by printing the status code and reason
             print(f"Broken Link Http Request Status => {e.code}")
             print(f"Broken Link Http Request Body ===> {e.reason}")
 

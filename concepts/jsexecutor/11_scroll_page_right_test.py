@@ -1,3 +1,4 @@
+import time
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -21,20 +22,30 @@ class TestScrollPageRight(unittest.TestCase):
         cls.driver.quit()
 
     def test_scroll_page_right(self):
-        # Navigate to the Selenium website
-        self.driver.get("https://www.selenium.dev/")
+        # Load a local HTML file with a horizontal scroll
+        self.driver.get("file:///D:/Environment_Collection/Intellij_Env/Selenium_Concepts/"
+                        "src/main/resources/supportFiles/HorizontalScroll.html")
 
-        # Use the JavaScript executor
+        # Create a JavaScript Executor instance
         js_executor = self.driver.execute_script
 
-        # Execute JavaScript to scroll the window to the right of the page
-        js_executor("window.scrollTo(document.body.scrollHeight, 0)")
+        '''
+        Another way to achieve page right scrolling
+        ==========================================
+        # js_executor("window.scrollTo({ right: document.body.scrollWidth, behavior: 'auto' })")
+        '''
 
-        # Find the specific element for the Selenium Logo by XPATH
-        selenium_logo = self.driver.find_element(By.XPATH, "//span[@class='navbar-logo']")
+        # Scroll the window to the extreme right of the page
+        js_executor("window.scrollTo(document.body.scrollWidth, 0)")
 
-        # Check if the element is in the viewport
-        assert self.in_viewport(selenium_logo)
+        # Wait for a while to ensure the scroll action completes (optional)
+        time.sleep(2)
+
+        # Locate the desired element, "Item 5", within the horizontal scrolling content
+        item_section = self.driver.find_element(By.XPATH, "//div[@class='scroll-item'][text()='Item 5']")
+
+        # Verify that the element is visible within the viewport after scrolling
+        assert self.in_viewport(item_section)
 
     def in_viewport(self, element):
         # JavaScript code to determine if the element is within the viewport

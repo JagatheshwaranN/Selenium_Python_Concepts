@@ -22,9 +22,6 @@ class TestTextCaptcha(unittest.TestCase):
         # Create ChromeOptions object to configure Chrome WebDriver settings
         chrome_options = Options()
 
-        # Add arguments to ChromeOptions (commented out for disabling notifications)
-        # chrome_options.add_argument("--disable-notifications")
-
         # Create dictionary to store Chrome preferences
         preferences = {
             'profile.default_content_setting_values.notifications': 2
